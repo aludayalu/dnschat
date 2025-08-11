@@ -8,7 +8,7 @@ class EchoResolver(BaseResolver):
         msg = labels[0]
         reply_msg = f"Echoing {msg}"
         reply = request.reply()
-        reply.add_answer(RR(qname, QTYPE.TXT, rdata=TXT(reply_msg), ttl=60))
+        reply.add_answer(RR(qname, QTYPE.TXT, rdata=TXT(reply_msg), ttl=1))
         return reply
 
 resolver = EchoResolver()
