@@ -2,7 +2,7 @@ from dnslib.server import DNSServer, BaseResolver
 from dnslib import RR, QTYPE, TXT
 
 class EchoResolver(BaseResolver):
-    def resolve(self, request, handler):
+    def resolve(self, request):
         qname = request.q.qname
         labels = str(qname).rstrip('.').split('.')
         msg = labels[0]
